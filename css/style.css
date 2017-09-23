@@ -1,0 +1,43 @@
+body {
+
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+.icon {
+   width: 2em; height: 2em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.content {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2em 0;
+}
+.item {
+    position: absolute;
+    width: 280px;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: all 1s;
+    padding: 1em ;
+    border-radius: 0.4em;
+}
+.showImg {
+    width: 100%;
+}
+.color-orange {
+    min-height: 300px;
+    background-color: #FF8A0C;
+}
+.color-purple {
+    min-height: 300px;
+    background-color: #9D52E5;
+}
+.color-blue {
+    min-height: 200px;
+    background-color: #0078DA;
+}
