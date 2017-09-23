@@ -6,12 +6,16 @@
 
 body {
     min-width: 320px;
-    padding: 8px;
+    padding-top: 72px;
     line-height: 1.6;
+    background: #80DEEA;
 }
 a {
     text-decoration: none;
     color: #EEE;
+}
+a:hover {
+    color: #000;
 }
 h3 {
     margin: 1em 0;
@@ -26,11 +30,16 @@ p {
    fill: currentColor;
    overflow: hidden;
 }
+.linkIcon {
+   width: 1em; 
+   height: 1em;
+}
 .content {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin: 2em 0;
+    margin-top: 2em;
+    margin-bottom: 6em;
     min-width: 280px;
 }
 .item {
@@ -69,4 +78,30 @@ p {
 .color-pink {
     min-height: 300px;
     background-color: #E26787;
+}
+
+header {
+     padding: 1em 0;
+     text-align: center;
+     color: #EEE;
+     background: #00BCD4;
+     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px,
+                 rgba(0, 0, 0, 0.12) 0px 1px 4px;
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 100;
+}
+
+footer {
+    margin-top: 1em;
+    text-align: center;
+    background: #313639;
+    color: #EEE;
+    padding: 1em 0;
+    letter-spacing: 1px;
+}
+
+footer .icon {
+    vertical-align: bottom;
 }
