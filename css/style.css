@@ -3,7 +3,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: #333;
+    color: #EEE;
 }
 .icon {
    width: 2em; height: 2em;
@@ -25,19 +25,27 @@ a {
     transition: all 1s;
     padding: 1em ;
     border-radius: 0.4em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px,
+                rgba(0, 0, 0, 0.23) 0px 3px 10px;
+    color: #EEE;
 }
 .showImg {
     width: 100%;
 }
 .color-orange {
     min-height: 300px;
-    background-color: #FF8A0C;
+    background-color: #FF5722;
 }
 .color-purple {
     min-height: 300px;
-    background-color: #9D52E5;
+    background-color: #3F51B5;
 }
 .color-blue {
-    min-height: 200px;
-    background-color: #0078DA;
+    min-height: 300px;
+    background-color: #2196F3;
+}
+
+.color-green {
+    min-height: 300px;
+    background-color: #009688;
 }
