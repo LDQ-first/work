@@ -9,6 +9,7 @@ body {
     padding-top: 72px;
     line-height: 1.6;
     background: #80DEEA;
+    height: 100vh;
 }
 a {
     text-decoration: none;
@@ -45,8 +46,8 @@ p {
 .item {
     position: absolute;
     width: 280px;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
     transition: all 1s;
     padding: 1em ;
     border-radius: 0.4em;
@@ -54,6 +55,9 @@ p {
                 rgba(0, 0, 0, 0.23) 0px 3px 10px;
     color: #EEE;
 }
+
+
+
 .showImg {
     width: 100%;
 }
@@ -104,4 +108,94 @@ footer {
 
 footer .icon {
     vertical-align: bottom;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 70px;
+    opacity: 1;
+    z-index: 10;
+    background: #80DEEA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loading.none {
+    opacity: 0;
+    z-index: -10;
+}
+
+
+.loading .loader {
+    position: relative;
+    top: -70px;
+    width: 5em;
+    height: 5em;
+    transform: rotate(165deg);
+}
+
+.loading .loader:before, .loading .loader:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  transform: translate(-50%, -50%);
+}
+
+.loading .loader:before {
+  animation: before 2s infinite;
+}
+.loading .loader:after {
+  animation: after 2s infinite;
+}
+
+@keyframes before {
+  0% {
+    width: 1em;
+    box-shadow: 2em -1em rgba(225, 20, 98, 0.75),
+               -2em 1em rgba(93, 81, 186, 0.75);
+  }
+  35% {
+    width: 5em;
+    box-shadow: 0 -1em rgba(225, 20, 98, 0.75),
+                0 1em rgba(93, 81, 186, 0.75);
+  }
+  70% {
+    width: 1em;
+    box-shadow: -2em -1em rgba(225, 20, 98, 0.75),
+                2em 1em rgba(93, 81, 186, 0.75);
+  }
+  100% {
+    box-shadow: 2em -1em rgba(225, 20, 98, 0.75),
+               -2em 1em rgba(93, 81, 186, 0.75);
+  }
+}
+@keyframes after {
+  0% {
+    height: 1em;
+    box-shadow: 1em 2em rgba(35, 112, 168, 0.75),
+               -1em -2em rgba(233, 169, 32, 0.75);
+  }
+  35% {
+    height: 5em;
+    box-shadow: 1em 0 rgba(35, 112, 168, 0.75),
+                -1em 0 rgba(233, 169, 32, 0.75);
+  }
+  70% {
+    height: 1em;
+    box-shadow: 1em -2em rgba(35, 112, 168, 0.75),
+                -1em 2em rgba(233, 169, 32, 0.75);
+  }
+  100% {
+    box-shadow: 1em 2em rgba(35, 112, 168, 0.75),
+               -1em -2em rgba(233, 169, 32, 0.75);
+  }
 }
