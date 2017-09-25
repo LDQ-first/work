@@ -2,6 +2,8 @@
 $.fn.extend({
     Waterfall: function() {
         $('.loading').removeClass('none');
+        $('.content').removeClass('show');
+        $('.item').removeClass('show');
         var $this = this;
         var father = $this.parent()
 
@@ -20,7 +22,7 @@ $.fn.extend({
                     defereds.push(defer);
                 });
                 const timer = setTimeout(function() {
-                    console.log('setTimeout')
+                    console.log('超时了')
                     render()
                 }, 5000)
                 $.when.apply(null, defereds)
@@ -46,7 +48,7 @@ $.fn.extend({
            
 
 
-                 $this.each(function(){
+                 $this.each( function() {
                     var $cur = $(this); 
                     var idx = 0,
                         minSumHeight = colSumHeight[0];
@@ -57,11 +59,17 @@ $.fn.extend({
                             minSumHeight = colSumHeight[i];
                         }
                     }
-
+                    
                     $cur.css({
                         left: nodeWidth * idx,
                         top: minSumHeight
                     })
+
+                    $cur.removeClass('noMr');
+                    
+                    if((idx + 1) % colNum === 0) {
+                        $cur.addClass('noMr');
+                    }
 
                     colSumHeight[idx] += $cur.outerHeight(true);
                 }); 
@@ -70,10 +78,12 @@ $.fn.extend({
                 var maxHeight = Math.max.apply(null, colSumHeight);
                 father.css({
                     height: maxHeight,
-                    width: nodeWidth * colNum
+                    width: nodeWidth * colNum - 20
                 })
                 
                 $('.loading').addClass('none');
+                $('.content').addClass('show');
+                $('.item').addClass('show');
 
         }
         place()

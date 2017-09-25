@@ -13,19 +13,24 @@ body {
    /* height: 100vh;*/
     position: relative;
 }
+
 a {
     text-decoration: none;
     color: #EEE;
 }
+
 a:hover {
     color: #000;
 }
+
 h3 {
     margin: 1em 0;
 }
+
 p {
     margin: 0.5em 0;
 }
+
 .icon {
    width: 2em; 
    height: 2em;
@@ -33,19 +38,34 @@ p {
    fill: currentColor;
    overflow: hidden;
 }
+
 .linkIcon {
    width: 1em; 
    height: 1em;
 }
+
 .content {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 2em;
+    margin-top: 3em;
     margin-bottom: 6em;
     min-width: 280px;
-    transition: all 0.5s ease-in-out;
 }
+
+.content.show {
+      animation: showContent 0.5s ease-in-out forwards;
+}
+
+@keyframes showContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .item {
     position: absolute;
     width: 280px;
@@ -59,19 +79,38 @@ p {
     color: #EEE;
 }
 
+.item.noMr {
+    margin-right: 0;
+}
+
+.item.show {
+     animation: showItem 0.8s ease-in-out forwards;
+}
+
+@keyframes showItem {
+    0% {
+        transform: translateY(30%);
+    }
+    100% {
+         transform: translateY(0%);
+    }
+}
 
 
 .showImg {
     width: 100%;
 }
+
 .color-orange {
     min-height: 300px;
     background-color: #FF5722;
 }
+
 .color-purple {
     min-height: 300px;
     background-color: #3F51B5;
 }
+
 .color-blue {
     min-height: 300px;
     background-color: #2196F3;
