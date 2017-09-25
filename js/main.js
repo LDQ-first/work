@@ -8,11 +8,20 @@ $.fn.extend({
 
          function place () {
               var defereds = [];
-              $this.find('img').each(function() {
-                var defer = $.Deferred();
-                 $(this).on('load', function(){
+              $this.find('img').each(function(){
+                    var defer = $.Deferred();
+                    //当每个图片加载完成后，执行 resolve
+                   /* console.log($(this))
+                    console.log(defer)*/
+                    $(this).on('load', function(){
+                        console.log('load')
                         defer.resolve();
                     });
+                    /*document.getElementsByTagName('img').onload = function(){
+                        console.log('load')
+                        defer.resolve();
+                    }*/
+                   /* console.log(defer)*/
                     defereds.push(defer);
                 });
                 $.when.apply(null, defereds)
@@ -23,7 +32,6 @@ $.fn.extend({
         
 
         function render() {
-
             var nodeWidth = $this.outerWidth(true),
                 colNum = parseInt($(window).width()/nodeWidth),
                 colSumHeight = [];

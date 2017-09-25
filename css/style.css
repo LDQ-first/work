@@ -42,6 +42,7 @@ p {
     margin-top: 2em;
     margin-bottom: 6em;
     min-width: 280px;
+    transition: all 0.5s ease-in-out;
 }
 .item {
     position: absolute;
