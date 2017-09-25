@@ -14,11 +14,9 @@ $.fn.extend({
               $this.find('img').each(function(){
                     var defer = $.Deferred();
                     //当每个图片加载完成后，执行 resolve
-                   /* console.log(defer)*/
                     $(this).on('load', function(){
                         defer.resolve();
                     });
-                   /* console.log(defer)*/
                     defereds.push(defer);
                 });
                 const timer = setTimeout(function() {
