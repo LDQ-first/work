@@ -22,7 +22,7 @@ $.fn.extend({
                 const timer = setTimeout(function() {
                     console.log('setTimeout')
                     render()
-                }, 8000)
+                }, 5000)
                 $.when.apply(null, defereds)
                       .done(function() {
                         render()
