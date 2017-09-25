@@ -8,26 +8,26 @@ $.fn.extend({
 
          function place () {
               var defereds = [];
+              console.log($this.length)
               $this.find('img').each(function(){
                     var defer = $.Deferred();
                     //当每个图片加载完成后，执行 resolve
-                   /* console.log($(this))
-                    console.log(defer)*/
+                   /* console.log(defer)*/
                     $(this).on('load', function(){
-                        console.log('load')
                         defer.resolve();
                     });
-                    /*document.getElementsByTagName('img').onload = function(){
-                        console.log('load')
-                        defer.resolve();
-                    }*/
                    /* console.log(defer)*/
                     defereds.push(defer);
                 });
+                const timer = setTimeout(function() {
+                    render()
+                }, 5000)
                 $.when.apply(null, defereds)
                       .done(function() {
                         render()
+                        clearTimeout(timer)
                      })
+                
          }
         
 
