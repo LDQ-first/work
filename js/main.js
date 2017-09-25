@@ -5,20 +5,25 @@ $.fn.extend({
         var $this = this;
         var father = $this.parent()
 
-         var defereds = [];
-            $this.find('img').each(function() {
+
+         function place () {
+              var defereds = [];
+              $this.find('img').each(function() {
                 var defer = $.Deferred();
-                $(this).on('load', function() {
-                    defer.resolve();
+                 $(this).on('load', function(){
+                        defer.resolve();
+                    });
+                    defereds.push(defer);
                 });
-                defereds.push(defer);
-            })
-            $.when.apply(null, defereds)
-                  .done(function() {
-                      render()
-                  })
+                $.when.apply(null, defereds)
+                      .done(function() {
+                        render()
+                     })
+         }
+        
 
         function render() {
+
             var nodeWidth = $this.outerWidth(true),
                 colNum = parseInt($(window).width()/nodeWidth),
                 colSumHeight = [];
@@ -62,6 +67,7 @@ $.fn.extend({
                 $('.loading').addClass('none');
 
         }
+        place()
 
         $(window).on('resize', function(){
             render();
