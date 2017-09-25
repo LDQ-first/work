@@ -7,9 +7,11 @@
 body {
     min-width: 320px;
     padding-top: 72px;
+    padding-bottom: 114px;
     line-height: 1.6;
     background: #80DEEA;
-    height: 100vh;
+   /* height: 100vh;*/
+    position: relative;
 }
 a {
     text-decoration: none;
@@ -105,6 +107,9 @@ footer {
     color: #EEE;
     padding: 1em 0;
     letter-spacing: 1px;
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
 }
 
 footer .icon {

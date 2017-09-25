@@ -20,8 +20,9 @@ $.fn.extend({
                     defereds.push(defer);
                 });
                 const timer = setTimeout(function() {
+                    console.log('setTimeout')
                     render()
-                }, 3000)
+                }, 8000)
                 $.when.apply(null, defereds)
                       .done(function() {
                         render()
