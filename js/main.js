@@ -21,7 +21,7 @@ $.fn.extend({
                 });
                 const timer = setTimeout(function() {
                     render()
-                }, 5000)
+                }, 3000)
                 $.when.apply(null, defereds)
                       .done(function() {
                         render()
