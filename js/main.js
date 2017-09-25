@@ -18,10 +18,12 @@ $.fn.extend({
                       render()
                   })
 
-        function render(){
+        function render() {
             var nodeWidth = $this.outerWidth(true),
                 colNum = parseInt($(window).width()/nodeWidth),
                 colSumHeight = [];
+                
+
 
             for(var i = 0; i < colNum; i++){
                 colSumHeight.push(0);
@@ -60,7 +62,6 @@ $.fn.extend({
                 $('.loading').addClass('none');
 
         }
-        render();
 
         $(window).on('resize', function(){
             render();
