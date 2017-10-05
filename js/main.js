@@ -22,7 +22,7 @@ $.fn.extend({
                 const timer = setTimeout(function() {
                     console.log('超时了')
                     render()
-                }, 5000)
+                }, 4000)
                 $.when.apply(null, defereds)
                       .done(function() {
                         render()
