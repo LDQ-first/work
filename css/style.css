@@ -12,6 +12,7 @@ body {
     background: #80DEEA;
    /* height: 100vh;*/
     position: relative;
+    overflow-x: hidden;
 }
 
 a {
@@ -51,6 +52,7 @@ p {
     margin-top: 3em;
     margin-bottom: 6em;
     min-width: 280px;
+    overflow-x: hidden;
 }
 
 .content.show {
